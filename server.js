@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
 const productRouter = require("./server/routes/productRouter");
+const userRouter = require("./server/routes/userRouter");
 require("dotenv/config");
 
 const app = express();
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/products", productRouter);
+app.use("/users", userRouter);
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,

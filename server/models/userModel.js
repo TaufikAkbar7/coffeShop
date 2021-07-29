@@ -11,6 +11,7 @@ const defaultString = {
 const defaultNumber = {
     type: Number,
     required: true,
+    default: 0
 };
 
 const UserSchema = new Schema(
