@@ -1,11 +1,11 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
-    colors:{
+    colors: {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
@@ -17,11 +17,14 @@ module.exports = {
       green: colors.green,
       purple: colors.purple,
       pink: colors.pink,
-      primaryColor: "#0C0F14",
-      secondaryColor: "#fff",
-      thirdColor: "#D17842",
-      fourColor: "#131820"
-    }
+      primaryColor: '#0C0F14',
+      secondaryColor: '#fff',
+      thirdColor: '#D17842',
+      fourColor: '#131820',
+    },
+    fontFamily: {
+      roboto: ['Roboto Slab', 'sans-serif'],
+    },
   },
   variants: {
     extend: {},

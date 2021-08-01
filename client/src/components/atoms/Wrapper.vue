@@ -1,13 +1,14 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-center items-center">
+  <div :class="className">
       <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Wrapper'
-}
+  name: 'Wrapper',
+  props: ['className'],
+};
 </script>
 
 <style>

@@ -6,6 +6,7 @@
 
 <script>
 import Hero from '../components/molecules/Hero.vue';
+
 export default {
   name: 'Home',
   components: { Hero },
