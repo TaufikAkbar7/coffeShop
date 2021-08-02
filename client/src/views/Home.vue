@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Hero from '../components/molecules/Hero.vue';
+import { Hero } from '../components/molecules';
 
 export default {
   name: 'Home',

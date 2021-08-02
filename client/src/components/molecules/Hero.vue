@@ -2,7 +2,7 @@
   <Wrapper
     className="min-h-screen flex flex-col justify-start items-start bg-primaryColor hero"
   >
-    <Navbar />
+  <Navbar />
     <div class="flex flex-col items-center w-1/2 mt-10">
       <h1
           class="
@@ -27,11 +27,13 @@
           />
         </div>
     </div>
+    <Popular/>
   </Wrapper>
 </template>
 
 <script>
 import { Wrapper, Button, Navbar } from '../atoms';
+import Popular from './Popular.vue';
 
 export default {
   name: 'Hero',
@@ -39,6 +41,7 @@ export default {
     Wrapper,
     Button,
     Navbar,
+    Popular,
   },
   data: () => ({
     subTitle: 'choose and taste delicious coffe from the best beans',
