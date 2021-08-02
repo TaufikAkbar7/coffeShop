@@ -20,7 +20,7 @@ module.exports = {
       primaryColor: '#0C0F14',
       primaryColor60: 'rgba(12, 15, 20, 0.6)',
       secondaryColor: '#fff',
-      secondayColor50: 'color-ffffff-50": "rgba(255, 255, 255, 0.5)',
+      secondayColor50: 'rgba(255, 255, 255, 0.5)',
       thirdColor: '#D17842',
       fourColor: '#131820',
     },

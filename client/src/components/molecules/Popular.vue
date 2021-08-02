@@ -14,7 +14,7 @@
         <div
           v-for="item in items"
           :key="item.name"
-          class="bg-primaryColor60 rounded-2xl h-36 flex flex-row p-4 ml-5"
+          class="bg-primaryColor60 rounded-2xl h-36 flex flex-row p-4 ml-5 linear"
         >
           <img class="rounded-2xl h-28  object-cover" src="../../assets/article/category-3.png" alt="item" />
           <div class="flex flex-col justify-center items-start p-5">
@@ -48,4 +48,7 @@ export default {
 </script>
 
 <style>
+.linear{
+  background: linear-gradient(157.7deg, #222A39 0%, #0C0F14 99.78%);
+}
 </style>
