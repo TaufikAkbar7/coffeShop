@@ -4,7 +4,11 @@ module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '1220px': '1220px',
+      },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -23,6 +27,7 @@ module.exports = {
       secondayColor50: 'rgba(255, 255, 255, 0.5)',
       thirdColor: '#D17842',
       fourColor: '#131820',
+      fiveColor: '#171D26'
     },
     fontFamily: {
       roboto: ['Roboto Slab', 'sans-serif'],

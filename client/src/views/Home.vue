@@ -1,14 +1,18 @@
 <template>
   <div class='home'>
    <Hero/>
+   <About/>
   </div>
 </template>
 
 <script>
-import { Hero } from '../components/molecules';
+import { Hero, About } from '../components/molecules';
 
 export default {
   name: 'Home',
-  components: { Hero },
+  components: {
+    Hero,
+    About,
+  },
 };
 </script>
