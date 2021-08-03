@@ -16,7 +16,7 @@
         Enjoy a new blend of <br />
         coffee styles
       </h1>
-      <div class="flex flex-row items-center mt-10">
+      <div class="flex flex-row items-center mt-10 mb-12">
         <div v-for="item in items" :key="item.name" class="w-96 mx-3 bg-fiveColor rounded-2xl">
           <img class="rounded-t-2xl object-contain" width="450" src="../../assets/article/detail-1.png" alt="img menu" />
           <div class="flex flex-col justify-start items-center p-5">

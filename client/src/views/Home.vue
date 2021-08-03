@@ -5,11 +5,14 @@
      <About/>
      <Menu/>
    </div>
+   <Install/>
   </div>
 </template>
 
 <script>
-import { Hero, About, Menu } from '../components/molecules';
+import {
+  Hero, About, Menu, Install,
+} from '../components/molecules';
 
 export default {
   name: 'Home',
@@ -17,6 +20,7 @@ export default {
     Hero,
     About,
     Menu,
+    Install,
   },
 };
 </script>
