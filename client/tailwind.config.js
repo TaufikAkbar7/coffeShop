@@ -24,10 +24,10 @@ module.exports = {
       primaryColor: '#0C0F14',
       primaryColor60: 'rgba(12, 15, 20, 0.6)',
       secondaryColor: '#fff',
-      secondayColor50: 'rgba(255, 255, 255, 0.5)',
+      secondaryColor50: 'rgba(255, 255, 255, 0.5)',
       thirdColor: '#D17842',
       fourColor: '#131820',
-      fiveColor: '#171D26'
+      fiveColor: '#171D26',
     },
     fontFamily: {
       roboto: ['Roboto Slab', 'sans-serif'],

@@ -1,6 +1,6 @@
 <template>
   <Wrapper
-    className="min-h-screen flex flex-col justify-start items-center bg-fourColor"
+    className="min-h-screen flex flex-col justify-start items-center"
   >
     <div class="w-1220px">
       <div class="flex flex-wrap justify-between">
@@ -37,12 +37,12 @@
         />
         <div class="flex flex-col justify-start items-center rounded-2xl pb-5 bg-fiveColor">
           <img
-          class="rounded-2xl object-cover"
+          class="rounded-t-2xl object-cover"
           src="../../assets/article/index-about-us-2.png"
           alt="img about"
         />
         <h1 class="text-secondaryColor text-xl font-semibold p-3">Cofsop Coffe</h1>
-        <p class="text-secondayColor50 text-sm leading-relaxed">This is the best coffee ever, with a great<br/> blend of coffe produces spectacular flavor</p>
+        <p class="text-secondaryColor50 text-sm leading-relaxed">This is the best coffee ever, with a great<br/> blend of coffe produces spectacular flavor</p>
         </div>
         <img
           class="rounded-2xl object-cover"

@@ -19,7 +19,7 @@
           <img class="rounded-2xl h-28 w-40 object-cover" src="../../assets/article/category-3.png" alt="item" />
           <div class="flex flex-col justify-center items-start p-5">
             <h2 class="text-secondaryColor font-semibold text-2xl">{{ item.name }}</h2>
-            <p class="tracking-wide text-secondayColor50 text-md">{{ item.ing }}</p>
+            <p class="tracking-wide text-secondaryColor50 text-md">{{ item.ing }}</p>
             <strong class="font-bold text-thirdColor tracking-wide text-2xl mt-5">{{ item.harga }}</strong>
           </div>
         </div>
