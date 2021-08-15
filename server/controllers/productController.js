@@ -1,4 +1,4 @@
-const Product = require("../models/productModel");
+const { Product } = require("../models/productModel");
 const asyncHandler = require("express-async-handler");
 const path = require("path");
 const fs = require("fs");
@@ -15,12 +15,14 @@ exports.createProduct = asyncHandler(async (req, res) => {
     const image = req.file.path;
     const harga = req.body.harga;
     const detail = req.body.detail;
+    const category = req.body.category;
 
     const product = new Product({
         name: name,
         image: image,
         harga: harga,
-        detail: detail
+        detail: detail,
+        category: category,
     });
 
     const createProduct = await product.save();
@@ -28,11 +30,41 @@ exports.createProduct = asyncHandler(async (req, res) => {
 });
 
 exports.getAllProducts = asyncHandler(async (req, res) => {
-    const products = await Product.find();
-    res.status(200).json({
-        message: "Get data succesfully",
-        products
+    const currentPage = +req.query.page || 1;
+    const perPage = +req.query.perPage || 4;
+    const name = req.query.name || "";
+    const category = req.query.category || "";
+    const order = req.query.order || "";
+    const min =
+        req.query.min && Number(req.query.min) !== 0 ? Number(req.query.min) : 0;
+    const max =
+        req.query.max && Number(req.query.max) !== 0 ? Number(req.query.max) : 0;
+    const nameFilter = name ? { name: { $regex: name, $options: "i" } } : {};
+    const categoryFilter = category ? { category: category } : {};
+    const priceFilter = min && max ? { harga: { $gte: min, $lte: max } } : {};
+    const sortOrder =
+        order === "lowest"
+            ? { harga: 1, createdAt: -1 }
+            : order === "highest"
+                ? { harga: -1, createdAt: -1 }
+                : { _id: -1, createdAt: -1 };
+
+    const count = await Product.countDocuments();
+    const products = await Product.find({
+        ...nameFilter,
+        ...categoryFilter,
+        ...priceFilter,
     })
+        .sort(sortOrder)
+        .skip((currentPage - 1) * perPage)
+        .limit(perPage);
+    res.status(200).json({
+        message: "Get Data succesfully",
+        total_product: count,
+        current_page: currentPage,
+        per_page: perPage,
+        data: products
+    });
 });
 
 exports.getProductById = asyncHandler(async (req, res) => {
@@ -44,7 +76,7 @@ exports.getProductById = asyncHandler(async (req, res) => {
 });
 
 exports.getUpdateById = asyncHandler(async (req, res) => {
-   
+
     //cek apakah image sudah di upload oleh user
     if (!req.file) {
         const err = new Error("Image must be uploaded!");
@@ -56,6 +88,7 @@ exports.getUpdateById = asyncHandler(async (req, res) => {
     const image = req.file.path;
     const harga = req.body.harga;
     const detail = req.body.detail;
+    const category = req.body.category;
     const getId = req.params.id;
 
     const product = await Product.findById(getId);
@@ -66,6 +99,7 @@ exports.getUpdateById = asyncHandler(async (req, res) => {
     product.image = image;
     product.harga = harga;
     product.detail = detail;
+    product.category = category;
 
     const updateProduct = await product.save();
     res.status(201).json({ message: "Product Updated", updateProduct });

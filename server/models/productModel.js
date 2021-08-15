@@ -18,6 +18,7 @@ const ProductSchema = new Schema(
         name: defaultString,
         harga: defaultNumber,
         detail: defaultString,
+        category: defaultString,
         image: defaultString,
     },
     {
@@ -25,5 +26,17 @@ const ProductSchema = new Schema(
     }
 );
 
+const ProductDiscoverySchema = new Schema(
+    {
+      name: defaultString,
+      image: defaultString
+    },
+    {
+      timestamps: true,
+    }
+);
+
 const Product = mongoose.model("Product", ProductSchema);
-module.exports = Product;
+const ProductDiscovery = mongoose.model("ProductDiscovery", ProductDiscoverySchema);
+
+module.exports = { Product, ProductDiscovery };
