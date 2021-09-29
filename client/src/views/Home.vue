@@ -12,7 +12,7 @@
 <script>
 import {
   Hero, About, Menu, Install,
-} from '../components/molecules';
+} from '../components';
 
 export default {
   name: 'Home',

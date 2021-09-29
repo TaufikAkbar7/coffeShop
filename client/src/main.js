@@ -6,6 +6,7 @@ import store from './store';
 import './assets/tailwind.css';
 
 Vue.use(VueCarousel);
+
 Vue.config.productionTip = false;
 
 new Vue({

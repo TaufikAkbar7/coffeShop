@@ -18,6 +18,9 @@
       </div>
       <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-start">
       </div>
+      <button class="mr-7">
+        <MenuIcon fillColor="#FFFFFF"/>
+      </button>
         <Button
           className="bg-thirdColor hover:bg-transparent text-white hover:border-thirdColor border-thirdColor border font-bold py-2 px-4 rounded"
           :name="buttonName"
@@ -31,11 +34,15 @@
 </template>
 
 <script>
+import MenuIcon from 'vue-material-design-icons/Shopping.vue';
 import Button from './Button.vue';
 
 export default {
   name: 'Navbar',
-  components: { Button },
+  components: {
+    Button,
+    MenuIcon,
+  },
   data() {
     return {
       showMenu: false,

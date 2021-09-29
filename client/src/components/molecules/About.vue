@@ -19,7 +19,7 @@
           <p
             v-for="item in items"
             :key="item.name"
-            class="text-secondayColor50 text-sm"
+            class="text-white text-sm"
           >
             {{ item.name }}
           </p>
